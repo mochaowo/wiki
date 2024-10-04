@@ -1,1 +1,268 @@
-site_name: My Docs
+site_name: yozen & rah wiki
+site_description: 
+site_author: 
+copyright: 
+site_url: https://yozen0405.github.io/wiki/
+repo_url: 'https://github.com/yozen0405/wiki/'
+repo_name: yozen0405.github.io
+edit_uri: 'https://raw.githubusercontent.com/yozen0405/wiki/main/docs/'
+
+theme: 
+    name: material
+    language: zh-TW
+    search_index_only: true
+    palette:
+      - media: "(prefers-color-scheme: light)"
+        scheme: default
+        toggle:
+          icon: material//weather-sunny
+          name: Switch to dark mode
+      - media: "(prefers-color-scheme: dark)"
+        primary: indigo
+        scheme: slate
+        toggle:
+          icon: material/weather-night
+          name: Switch to light mode
+    features:
+      - announce.dismiss
+      - content.action.view
+      - content.code.annotate
+      - content.code.copy
+      - content.tooltips
+      - navigation.footer
+      - navigation.tabs
+      - navigation.expand
+      - search.highlight
+      - search.share
+      - search.suggest
+      - toc.follow
+    font: 
+      text: Roboto
+      code: Roboto Mono
+
+plugins:
+  - search:
+      jieba_dict: user_dict.txt
+
+icon:
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+
+markdown_extensions:
+  - pymdownx.critic
+  - pymdownx.mark
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - abbr
+  - pymdownx.snippets
+  - def_list
+  - tables
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - meta
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.caret 
+  - pymdownx.mark 
+  - pymdownx.tilde 
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - footnotes
+  - toc:
+      permalink: ¶
+
+extra_css: 
+  - _static/css/extra.css
+
+extra_javascript: 
+  - _static/javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - _static/javascripts/open_new_tab.js
+
+extra:
+  analytics:
+    provider: google
+    property: G-3D8H9K81B3
+
+nav:
+    - 首頁: 
+        - 總覽: 'index.md'
+        - 網站架設 : 
+          - 語法教學: 'main/syntax.md'
+          - 架設教學: 'main/setup.md'
+    - 程式資源 :
+      - APCS: 'cp/apcs.md'
+      - 競程:
+        - 所有資源:
+          - 學習資源: 'cp/learning2.md'
+      - 比賽: 
+        - 目錄: 'cp/contest.md'
+        - TOI 資奧:
+          - TOI 新手同好會: 'cp/contest/TOI_easy.md'
+          - TOI 初選: 'cp/contest/TOI.md'
+          - TOI 選訓模考: 'cp/contest/TOI_M.md'
+          - TOI 模擬賽: 'cp/contest/TOI_mock.md'
+        - 學科能力競賽:
+          - 校內賽: 'cp/contest/school.md'
+          - 區域賽: 'cp/contest/regional.md'
+          - 全國賽模擬賽: 'cp/contest/nhspc_mock.md'
+        - 支線比賽: 'cp/contest/other.md'
+        - 各國 OI: 'cp/contest/OI.md'
+        - 比賽晉級路線圖: 'cp/contest/path.md'
+    - 基礎算法:
+      - Brute Force: 
+        - 折半枚舉: 'basic/brute_force/meet_in_middle.md'
+        - 狀態搜索: 'basic/brute_force/state.md'
+      - 貪心:
+        - 區段問題: 
+            - 區間問題: 'basic/greedy/interval.md'
+            - 排程問題: 'basic/greedy/scheduling.md'
+        - 資結貪心: 'basic/greedy/ds.md'
+        - maximum subarray: 'basic/greedy/max_subarray.md'
+        - 雜題整理: 'basic/greedy/problem.md'
+      - Sorting: 'basic/sorting_algorithms.md'
+    - 搜索算法:
+      - 二分搜: 'search/binary_search.md'
+      - 雙指針: 'search/two_pointer.md'
+      - Fracturing Search: 'search/fracturing_search.md'
+    - 資料結構:
+      - 概述: 'ds/index.md'
+      - 基礎資料結構:
+        - bitset加速: 'ds/bitset.md'
+      - 進階資料結構 I:
+        - 線段樹: 'ds/segment_tree.md'
+        - 前綴和技巧: 'ds/prefix.md'
+        - 單調隊列: 'ds/monotonous-stack.md'
+        - BIT: 'ds/bit.md'
+        - Sparse Table: 'ds/sparse_table.md'
+        - pb_ds: 'ds/pb_ds.md'
+        - 題目: 'ds/problem.md'
+      - 進階資料結構 II:
+        - Treap: 'ds/treap.md'
+        - 持久化: 'ds/persistent.md'
+        - 李超線段樹: 'ds/li_chao_segment_tree.md'
+        - Memory pool: 'ds/memory_pool.md'
+    - 圖論:
+      - 樹論: 
+        - 樹直徑: 'graph/tree_diameter.md'
+        - 樹重心: 'graph/tree_centriod.md'
+        - 換根 dp: 'graph/solving_for_all_roots.md'
+        - 樹 dp: 'graph/tree_dp.md'
+        - 樹壓平: 'graph/euler_tour.md'
+        - 倍增法與 LCA: 'graph/lca.md'
+        - prufer 序列: 'graph/prufer.md'
+        - 樹同構: 'graph/tree_isomorphism.md'
+        - 題目:
+          - 類 topo sort: 'graph/tree_topo_sort.md'
+          - greedy: 'graph/tree_greedy.md'
+          - 利用 dfs 序: 'graph/dfs_order.md'
+          - 其他類型: 'graph/other_problem.md'
+      - 特殊圖:
+        - 二分圖: 'graph/bipartite.md'
+        - 二元樹: 'graph/binary_tree.md'
+        - 水母圖: 'graph/functional_graph.md'
+      - 迴路:
+        - 歐拉迴路: 'graph/euler_path.md'
+        - 漢米頓迴路: 'graph/hamiltonian.md'
+      - 啟發式合併: 'graph/union_by_rank.md'
+      - 並查集: 'graph/dsu.md'
+      - MST: 'graph/mst.md'
+      - 最短路: 'graph/sp.md'
+      - Topological Sorting: 'graph/topo_sort.md'
+      - 進階圖論:
+        - 連通元件圖論: 'graph/connected_component.md'
+        - 網路流: 'graph/flow.md'
+    - 數學:
+        - 矩陣: 'math/matrix.md'
+        - 組合: 'math/comb.md'
+        - 賽局: 'math/game_theory.md'
+        - Josephus Problem: 'math/josephus_problem.md'
+        - 計算幾何: 'math/geometry.md'
+        - 大步小步: 'math/bsgs.md'
+        - 數論: 
+          - 因數: 'math/facts.md'
+          - 模運算: 'math/mod.md'
+          - 中國剩餘定理: 'math/crt.md'
+        - 特定數:
+          - mex: 'math/special/mex.md'
+          - 中位數: 'math/special/median.md'
+          - 平均數: 'math/special/average.md'
+          - 絕對眾數: 'math/special/mode.md'
+    - 分治與離線:
+        - 分治:
+            - 基礎技巧:  'offline/DC.md'
+            - 整體二分: 'offline/parallel-binsearch.md'
+            - CDQ 分治: 'offline/cdq.md'
+        - 離線操作: 'offline/offline.md'
+        - 莫隊算法: 'offline/mo-algo.md'
+        - 根號分塊: 'offline/sqrt.md'
+    - 動態規劃:
+      - 經典主題:
+        - LIS: 'dp/lis.md'
+        - LCS: 'dp/lcs.md'
+        - 背包問題: 'dp/knapsack.md'
+      - 一般 dp 類型:
+        - 區間dp: 'dp/range_dp.md'
+        - 數位dp: 'dp/digit_dp.md'
+        - 子矩形dp: 'dp/submatrix_dp.md'
+        - 雜題整理: 'dp/problem.md'
+        - 狀壓dp: 'dp/bitmask.md'
+      - 優化:
+        - 斜率優化: 'dp/convex_hull_trick.md'
+        - Aliens 優化: 'dp/aliens.md'
+        - SOS優化: 'dp/sos.md'
+    - 字串:
+      - Hash: 'string/hashing.md'
+      - Trie: 'string/trie.md'
+      - KMP: 'string/kmp.md'
+    - 各種題型:
+      - 構造題: 'problem/construct.md'
+      - 互動題: 'problem/interactive.md'
+      - 雜題: 'problem/problem.md'
+    - 其他:
+      - 小技巧:
+        - 訓練: 'other/practice.md'
+        - 壓常: 'other/constant.md'
+        - Debug: 'other/debug.md'
+        - c++語法技巧: 'other/tips.md'
+        - terminal 的一些指令: 'other/cmd.md'
+      - 序列交換問題: 'other/swap.md'
+      - 字典序: 'other/lexicographic.md'
+      - 分數運算: 'other/fraction.md'
+      - 平面距離: 'other/distance.md'
+      - 鴿籠原理: 'other/pigeonhole_principle.md'
+      - Bitwise Problem: 'other/bitwise.md'
+      - 括號問題: 'other/bracket_problem.md'
